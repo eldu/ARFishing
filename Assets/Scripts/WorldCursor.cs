@@ -3,6 +3,7 @@
 public class WorldCursor : MonoBehaviour
 {
     private MeshRenderer meshRenderer;
+    public LayerMask fish;
 
     // Use this for initialization
     void Start()
@@ -20,7 +21,19 @@ public class WorldCursor : MonoBehaviour
         var gazeDirection = Camera.main.transform.forward;
 
         RaycastHit hitInfo;
-        if (Physics.Raycast(headPosition, gazeDirection, out hitInfo))
+        if (Physics.Raycast(headPosition, gazeDirection, out hitInfo, Mathf.Infinity, fish.value))
+        {
+            // If the raycast hit a hologram...
+
+            // Display the cursor mesh.
+            meshRenderer.enabled = true;
+            // Move the cursor to the point where the raycast hit.
+            this.transform.position = hitInfo.point;
+            // Rotate the cursor to hug the surface of the hologram.
+            this.transform.rotation =
+                Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+        }
+        else if (Physics.Raycast(headPosition, gazeDirection, out hitInfo))
         {
             // If the raycast hit a hologram...
 

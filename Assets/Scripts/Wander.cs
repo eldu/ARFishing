@@ -43,4 +43,9 @@ public class Wander : MonoBehaviour {
 
         transform.LookAt(wayPoint);
     }
+
+    void OnSelect()
+    {
+        Destroy(gameObject);
+    }
 }

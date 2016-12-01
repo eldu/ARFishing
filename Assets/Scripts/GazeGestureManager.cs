@@ -3,6 +3,7 @@ using UnityEngine.VR.WSA.Input;
 
 public class GazeGestureManager : MonoBehaviour
 {
+    public LayerMask fish;
     public static GazeGestureManager Instance { get; private set; }
 
     // Represents the hologram that is currently being gazed at.
@@ -40,7 +41,13 @@ public class GazeGestureManager : MonoBehaviour
         var gazeDirection = Camera.main.transform.forward;
 
         RaycastHit hitInfo;
-        if (Physics.Raycast(headPosition, gazeDirection, out hitInfo))
+        // do a separate raycast against the fish layer
+        //int fish = 1 << 8;
+        if (Physics.Raycast(headPosition, gazeDirection, out hitInfo, Mathf.Infinity, fish.value))
+        {
+            FocusedObject = hitInfo.collider.gameObject;
+        }
+        else if (Physics.Raycast(headPosition, gazeDirection, out hitInfo))
         {
             // If the raycast hit a hologram, use that as the focused object.
             FocusedObject = hitInfo.collider.gameObject;
