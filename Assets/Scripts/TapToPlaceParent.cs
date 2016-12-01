@@ -2,11 +2,20 @@
 
 public class TapToPlaceParent : MonoBehaviour
 {
+    public Transform swimmerPrefab;
+    public int swimmerSpawnInterval;
+    int swimmerSpawnTimer;
+    bool readyToSpawnFish = false;
+
     bool placing = false;
+
 
     // Called by GazeGestureManager when the user performs a Select gesture
     void OnSelect()
     {
+        // ALPHA: after first placing, start spawning fish
+        if (placing) readyToSpawnFish = true;
+
         // On each Select gesture, toggle whether the user is in placing mode.
         placing = !placing;
 
@@ -49,5 +58,23 @@ public class TapToPlaceParent : MonoBehaviour
                 this.transform.parent.rotation = toQuat;
             }
         }
+    }
+
+    void FixedUpdate()
+    {
+        swimmerSpawnTimer--;
+        if (swimmerSpawnTimer < 0 && readyToSpawnFish)
+        {
+            swimmerSpawnTimer = swimmerSpawnInterval;
+            SpawnFish();
+        }
+    }
+
+    void SpawnFish()
+    {
+        Vector3 offset = new Vector3();
+        offset.y = -0.5f;
+        Transform swimmerClone = Instantiate(swimmerPrefab);
+        swimmerClone.transform.position = offset + transform.position;
     }
 }
