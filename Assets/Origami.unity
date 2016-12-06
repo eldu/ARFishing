@@ -482,7 +482,7 @@ Prefab:
     - target: {fileID: 114000011744501634, guid: 87596db941ad3bf45a16b586b6e28b5c,
         type: 2}
       propertyPath: drawVisualMeshes
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87596db941ad3bf45a16b586b6e28b5c, type: 2}

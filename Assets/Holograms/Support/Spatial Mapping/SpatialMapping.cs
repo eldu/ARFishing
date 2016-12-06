@@ -12,7 +12,7 @@ public class SpatialMapping : MonoBehaviour {
     public Material DrawMaterial;
 
     [Tooltip("If true, the Spatial Mapping data will be rendered.")]
-    public bool drawVisualMeshes = true;
+    public bool drawVisualMeshes = false; // Gary: turning this to 'true' here specifically breaks raycasting against the spatial mapping for some reason.
     
     // If true, Spatial Mapping will be enabled. 
     private bool mappingEnabled = true;

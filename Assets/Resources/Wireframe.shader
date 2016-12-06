@@ -110,7 +110,7 @@ Shader "Surface Reconstruction/Wireframe"
 
                 // Fade out the alpha but not the color so we don't get any weird halo effects from
                 // a fade to a different color.
-				float4 color;
+				float4 color = float4(0.0, 0.0, 0.0, 0.0);
 				if (_Invisible) return color;
 				color = I * _WireColor + (1 - I) * _BaseColor;
 				color.a = I;

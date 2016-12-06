@@ -25,13 +25,14 @@ public class TapToPlaceParent : MonoBehaviour
         // If the user is in placing mode, display the spatial mapping mesh.
         if (placing)
         {
-            //SpatialMapping.Instance.DrawVisualMeshes = true;
+            SpatialMapping.Instance.DrawVisualMeshes = true; // draw the visual mesh as-is
             scanMeshMaterial.SetInt("_Invisible", 0);
         }
-        // If the user is not in placing mode, hide the spatial mapping mesh.
+        // If the user is not in placing mode, hide the spatial mapping mesh, but continue to draw it for occlusion
         else
         {
-            scanMeshMaterial.SetInt("_Invisible", 1);
+            SpatialMapping.Instance.DrawVisualMeshes = true; // keep drawing the visual mesh for occlusion,
+            scanMeshMaterial.SetInt("_Invisible", 1);        // but perform a vertex transformation and don't draw "lines"
             scanMeshMaterial.SetFloat("_DropDepth", floorDepth);
         }
     }
