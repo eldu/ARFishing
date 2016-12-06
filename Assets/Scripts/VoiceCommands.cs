@@ -24,7 +24,6 @@ public class VoiceCommands : MonoBehaviour {
     {
         menuGameObject = (GameObject)Instantiate(MenuPrefab);
         System.Diagnostics.Debug.WriteLine("Showing menu");
-
     }
 
     public void StopMusic()
