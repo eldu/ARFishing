@@ -4,11 +4,14 @@ public class TapToPlaceParent : MonoBehaviour
 {
     public Transform swimmerPrefab;
     public int swimmerSpawnInterval;
+    public Material scanMeshMaterial;
+
     int swimmerSpawnTimer;
     bool readyToSpawnFish = false;
 
     bool placing = false;
 
+    float floorDepth;
 
     // Called by GazeGestureManager when the user performs a Select gesture
     void OnSelect()
@@ -22,12 +25,14 @@ public class TapToPlaceParent : MonoBehaviour
         // If the user is in placing mode, display the spatial mapping mesh.
         if (placing)
         {
-            SpatialMapping.Instance.DrawVisualMeshes = true;
+            //SpatialMapping.Instance.DrawVisualMeshes = true;
+            scanMeshMaterial.SetInt("_Invisible", 0);
         }
         // If the user is not in placing mode, hide the spatial mapping mesh.
         else
         {
-            SpatialMapping.Instance.DrawVisualMeshes = false;
+            scanMeshMaterial.SetInt("_Invisible", 1);
+            scanMeshMaterial.SetFloat("_DropDepth", floorDepth);
         }
     }
 
@@ -50,6 +55,7 @@ public class TapToPlaceParent : MonoBehaviour
                 // Move this object's parent object to
                 // where the raycast hit the Spatial Mapping mesh.
                 this.transform.parent.position = hitInfo.point;
+                floorDepth = hitInfo.point.y + 0.5f;
 
                 // Rotate this object's parent object to face the user.
                 Quaternion toQuat = Camera.main.transform.localRotation;

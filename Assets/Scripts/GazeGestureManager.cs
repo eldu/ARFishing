@@ -41,8 +41,7 @@ public class GazeGestureManager : MonoBehaviour
         var gazeDirection = Camera.main.transform.forward;
 
         RaycastHit hitInfo;
-        // do a separate raycast against the fish layer
-        //int fish = 1 << 8;
+        // do a separate raycast against the fish layer        
         if (Physics.Raycast(headPosition, gazeDirection, out hitInfo, Mathf.Infinity, fish.value))
         {
             FocusedObject = hitInfo.collider.gameObject;

@@ -12,7 +12,7 @@ public class SpatialMapping : MonoBehaviour {
     public Material DrawMaterial;
 
     [Tooltip("If true, the Spatial Mapping data will be rendered.")]
-    public bool drawVisualMeshes = false;
+    public bool drawVisualMeshes = true;
     
     // If true, Spatial Mapping will be enabled. 
     private bool mappingEnabled = true;

@@ -9,6 +9,8 @@ Shader "Surface Reconstruction/Wireframe"
         _BaseColor("Base color", Color) = (0.0, 0.0, 0.0, 1.0)
         _WireColor("Wire color", Color) = (1.0, 1.0, 1.0, 1.0)
         _WireThickness("Wire thickness", Range(0, 800)) = 100
+		_DropDepth("Drop depth", Range(-100.0, 100.0)) = 0.0
+		_Invisible("Invisibility", Int) = 1
     }
     SubShader
     {
@@ -27,6 +29,8 @@ Shader "Surface Reconstruction/Wireframe"
             float4 _BaseColor;
             float4 _WireColor;
             float _WireThickness;
+			float _DropDepth;
+			int _Invisible;
 
             // Based on approach described in "Shader-Based Wireframe Drawing", http://cgg-journal.com/2008-2/06/index.html
 
@@ -38,7 +42,13 @@ Shader "Surface Reconstruction/Wireframe"
             v2g vert(appdata_base v)
             {
                 v2g o;
-                o.viewPos = mul(UNITY_MATRIX_MVP, v.vertex);
+				if (!_Invisible)
+					o.viewPos = mul(UNITY_MATRIX_MVP, v.vertex);
+				else {
+					float4 worldVertex = mul(UNITY_MATRIX_M, v.vertex);
+					worldVertex.y = (worldVertex.y < _DropDepth) ? worldVertex.y - 1.0 : worldVertex.y;
+					o.viewPos = mul(UNITY_MATRIX_VP, worldVertex);
+				}
                 return o;
             }
 
@@ -100,8 +110,10 @@ Shader "Surface Reconstruction/Wireframe"
 
                 // Fade out the alpha but not the color so we don't get any weird halo effects from
                 // a fade to a different color.
-                float4 color = I * _WireColor + (1 - I) * _BaseColor;
-                color.a = I;
+				float4 color;
+				if (_Invisible) return color;
+				color = I * _WireColor + (1 - I) * _BaseColor;
+				color.a = I;
                 return color;
             }
             ENDCG
