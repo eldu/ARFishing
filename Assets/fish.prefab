@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013991276960}
   - 33: {fileID: 33000011138141358}
-  - 135: {fileID: 135000013352081522}
   - 23: {fileID: 23000010920601882}
   - 114: {fileID: 114000010004610118}
   - 54: {fileID: 54000012801209828}
+  - 136: {fileID: 136000010845534216}
   m_Layer: 8
   m_Name: fish
   m_TagString: Untagged
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013896872146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.9552972, y: -5.971291, z: 3.041753}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -109,8 +109,8 @@ MonoBehaviour:
   speed: 0.5
   range: 10
   wayPoint: {x: 0, y: 0, z: 0}
---- !u!135 &135000013352081522
-SphereCollider:
+--- !u!136 &136000010845534216
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -118,6 +118,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
+  m_Height: 1
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
