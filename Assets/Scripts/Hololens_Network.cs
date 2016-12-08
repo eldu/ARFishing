@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Hololens_Network : Photon.PunBehaviour
 {
+    public Player player;
+
     string roomName;
     float[] accelArray = new float[1];
 
@@ -63,11 +65,11 @@ public class Hololens_Network : Photon.PunBehaviour
         {
             PhotonPlayer sender = PhotonPlayer.Find(senderid);  // who sent this?
             float[] result = (float[])content;
-            print(result[0]);
+            //print(result[0]);
         }
         if (eventcode == 1) // reel event. should have gotten 1 byte, no need to do anything to it.
         {
-            print("reeling in!");
+            //print("reeling in!");
         }
     }
 }

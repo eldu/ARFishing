@@ -16,7 +16,7 @@ public class TapToPlaceParent : MonoBehaviour
 
     bool placing = false;
 
-    float floorDepth;
+    public float floorDepth;
 
     // Called by GazeGestureManager when the user performs a Select gesture
     void OnSelect()
