@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4505589, g: 0.50063235, b: 0.5758059, a: 1}
+  m_IndirectSpecularColor: {r: 0.4505586, g: 0.5006319, b: 0.5758055, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -305,6 +305,7 @@ GameObject:
   - 4: {fileID: 884080909}
   - 114: {fileID: 884080908}
   - 114: {fileID: 884080910}
+  - 114: {fileID: 884080911}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -402,6 +403,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuPrefab: {fileID: 110890, guid: 57a83819e757eba4f97e5817b7c8d962, type: 2}
   audio: {fileID: 416279446}
+--- !u!114 &884080911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 884080907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecfcce9122c93824c953dfe2ed1218a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1390713250
 Prefab:
   m_ObjectHideFlags: 0
@@ -580,6 +592,7 @@ MonoBehaviour:
   swimmerPrefab: {fileID: 4000013991276960, guid: 1b32179966acbaf429ce37102fafa7cc,
     type: 2}
   swimmerSpawnInterval: 60
+  scanMeshMaterial: {fileID: 0}
 --- !u!1001 &1785510309
 Prefab:
   m_ObjectHideFlags: 0

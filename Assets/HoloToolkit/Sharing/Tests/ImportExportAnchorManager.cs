@@ -98,7 +98,7 @@ public class ImportExportAnchorManager : Singleton<ImportExportAnchorManager>
     /// Keeps track of the current room we are connected to.  Anchors
     /// are kept in rooms.
     /// </summary>
-    private Room currentRoom;
+    private HoloToolkit.Sharing.Room currentRoom;
 
     /// <summary>
     /// Sometimes we'll see a really small anchor blob get generated.
