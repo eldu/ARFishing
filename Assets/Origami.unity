@@ -325,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RecognizerStart: 0
   KeywordsAndResponses:
-  - Keyword: Open Menu
+  - Keyword: Show Menu
     Response:
       m_PersistentCalls:
         m_Calls:
@@ -383,7 +383,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 884080907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.10234165, y: 0.23734808, z: -0.20670128}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuPrefab: {fileID: 110890, guid: 57a83819e757eba4f97e5817b7c8d962, type: 2}
-  audio: {fileID: 416279446}
+  BGMaudio: {fileID: 416279446}
 --- !u!1001 &1390713250
 Prefab:
   m_ObjectHideFlags: 0
@@ -562,24 +562,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 415650, guid: 950856a75a6a14b48b5923bc525a7a07, type: 2}
   m_PrefabInternal: {fileID: 1639873144}
---- !u!1 &1639873146 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 181504, guid: 950856a75a6a14b48b5923bc525a7a07, type: 2}
-  m_PrefabInternal: {fileID: 1639873144}
---- !u!114 &1639873147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1639873146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 769c95d7d86270e4fafb1ad8e0b9f6f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swimmerPrefab: {fileID: 4000013991276960, guid: 1b32179966acbaf429ce37102fafa7cc,
-    type: 2}
-  swimmerSpawnInterval: 60
 --- !u!1001 &1785510309
 Prefab:
   m_ObjectHideFlags: 0
