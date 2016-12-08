@@ -24,8 +24,13 @@ public class VoiceCommands : MonoBehaviour {
     {
         Vector3 offset = new Vector3();
         offset.z = 0.5f;
-        menuGameObject = (GameObject)Instantiate(MenuPrefab, offset + Camera.main.transform.position, MenuPrefab.transform.rotation);
+        MenuPrefab.SetActive(true);
         UnityEngine.Debug.Log("Menu???");
+    }
+
+    public void HideMenu()
+    {
+        MenuPrefab.SetActive(false);
     }
 
     public void StopMusic()
