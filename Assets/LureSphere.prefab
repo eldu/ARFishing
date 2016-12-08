@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000013098451132}
   m_Layer: 0
   m_Name: LureSphere
-  m_TagString: Untagged
+  m_TagString: Lure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a45f9df3c14f96459850b854d665fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 1
-  distOfDetection: 2
+  strength: 5
+  distOfDetection: 10
 --- !u!135 &135000011667288946
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Wander : MonoBehaviour {
@@ -13,6 +14,9 @@ public class Wander : MonoBehaviour {
     private float time = 0.0f;
 
     Rigidbody rb;
+
+    public Text fishCountText;
+    public FishCatalogue fishCatalogue;
     
 	// Use this for initialization
 	void Start () {
@@ -69,6 +73,13 @@ public class Wander : MonoBehaviour {
 
     void OnSelect()
     {
+        fishCatalogue = GameObject.Find("FishCatalogue").GetComponent<FishCatalogue>();
+        fishCountText = GameObject.Find("fishCount").GetComponent<Text>();
+        fishCatalogue.fishCount++;
+        fishCountText.text = fishCatalogue.fishCount.ToString();
+
+        Debug.Log(fishCatalogue.name);
+        Debug.Log(fishCountText.text);
         Destroy(gameObject);
     }
 }
