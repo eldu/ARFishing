@@ -11,7 +11,7 @@ public class Player : MonoBehaviour {
 	void Start () {
 	}
 
-    void Cast(float acceleration)
+    public void Cast(float acceleration)
     {
         if (readyToCast)
         {
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void Reel()
+    public void Reel()
     {
         readyToCast = true;
         baitComponent.Retrieve();

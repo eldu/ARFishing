@@ -11,14 +11,17 @@ public class BaitComponent : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        gameObject.SetActive(false);
         active = false;
         lureRigidbody = this.GetComponent<Rigidbody>();
-
+        lureRigidbody.useGravity = false;
+        lureRigidbody.velocity = Vector3.zero;
     }
 	
 	// Update is called once per frame
 	void Update () {
         active = tapToPlaceParent.floorDepth > this.transform.position.y;
+        print(tapToPlaceParent.floorDepth + " " + this.transform.position.y);
         if (active)
         {
             flying = false;
@@ -29,17 +32,18 @@ public class BaitComponent : MonoBehaviour {
 
     public void StartFlying(Vector3 startPosition, Vector3 velocity)
     {
-        this.active = true;
+        gameObject.SetActive(true);
         active = false;
         flying = true;
         lureRigidbody.useGravity = true;
         lureRigidbody.velocity = velocity;
+        this.transform.position = startPosition;
     }
 
     public void Retrieve()
     {
         active = false;
-        this.active = false;
+        gameObject.SetActive(false);
     }
 
     public bool isActive()

@@ -66,10 +66,12 @@ public class Hololens_Network : Photon.PunBehaviour
             PhotonPlayer sender = PhotonPlayer.Find(senderid);  // who sent this?
             float[] result = (float[])content;
             //print(result[0]);
+            player.Cast(result[0] * 3.0f);
         }
         if (eventcode == 1) // reel event. should have gotten 1 byte, no need to do anything to it.
         {
             //print("reeling in!");
+            player.Reel();
         }
     }
 }
