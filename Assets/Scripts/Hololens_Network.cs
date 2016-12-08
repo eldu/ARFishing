@@ -4,6 +4,7 @@ using System.Collections;
 public class Hololens_Network : Photon.PunBehaviour
 {
     string roomName;
+    float[] accelArray = new float[1];
 
     // LOOK-1.b: creating a room on PC
     void Start()
@@ -47,5 +48,26 @@ public class Hololens_Network : Photon.PunBehaviour
     public override void OnCreatedRoom()
     {
         base.OnCreatedRoom();
+    }
+
+    // setup our OnEvent as callback:
+    void Awake()
+    {
+        PhotonNetwork.OnEventCall += this.OnEvent;
+    }
+ 
+    // handle events:
+    private void OnEvent(byte eventcode, object content, int senderid)
+    {
+        if (eventcode == 0) // cast event. should have gotten back a single float.
+        {
+            PhotonPlayer sender = PhotonPlayer.Find(senderid);  // who sent this?
+            float[] result = (float[])content;
+            print(result[0]);
+        }
+        if (eventcode == 1) // reel event. should have gotten 1 byte, no need to do anything to it.
+        {
+            print("reeling in!");
+        }
     }
 }
