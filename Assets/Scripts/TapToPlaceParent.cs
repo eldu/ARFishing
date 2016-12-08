@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class TapToPlaceParent : MonoBehaviour
 {
     public Transform swimmerPrefab;
     public int swimmerSpawnInterval;
     public Material scanMeshMaterial;
+
+    // private List<GameObject> fishies;
+    private int numFish;
+    public int maxNumFish = 15;
 
     int swimmerSpawnTimer;
     bool readyToSpawnFish = false;
@@ -73,7 +78,11 @@ public class TapToPlaceParent : MonoBehaviour
         if (swimmerSpawnTimer < 0 && readyToSpawnFish)
         {
             swimmerSpawnTimer = swimmerSpawnInterval;
-            SpawnFish();
+
+            if (numFish < maxNumFish)
+            {
+                SpawnFish();
+            }
         }
     }
 
@@ -83,5 +92,6 @@ public class TapToPlaceParent : MonoBehaviour
         offset.y = -0.5f;
         Transform swimmerClone = Instantiate(swimmerPrefab);
         swimmerClone.transform.position = offset + transform.position;
+        numFish++;
     }
 }
