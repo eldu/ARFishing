@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4505589, g: 0.50063235, b: 0.5758059, a: 1}
+  m_IndirectSpecularColor: {r: 0.45055842, g: 0.5006316, b: 0.57580507, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -402,6 +402,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuPrefab: {fileID: 110890, guid: 57a83819e757eba4f97e5817b7c8d962, type: 2}
   audio: {fileID: 416279446}
+--- !u!1001 &1369495251
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000012943833126, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012943833126, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012943833126, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012943833126, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012943833126, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012943833126, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012943833126, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012943833126, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011385913434, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011385913434, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+      propertyPath: m_TagString
+      value: Lure
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013098451132, guid: ade6a0932cf1c26418ff90e73da78940,
+        type: 2}
+      propertyPath: strength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013098451132, guid: ade6a0932cf1c26418ff90e73da78940,
+        type: 2}
+      propertyPath: distOfDetection
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1390713250
 Prefab:
   m_ObjectHideFlags: 0
@@ -580,6 +640,8 @@ MonoBehaviour:
   swimmerPrefab: {fileID: 4000013991276960, guid: 1b32179966acbaf429ce37102fafa7cc,
     type: 2}
   swimmerSpawnInterval: 60
+  scanMeshMaterial: {fileID: 0}
+  maxNumFish: 15
 --- !u!1001 &1785510309
 Prefab:
   m_ObjectHideFlags: 0
