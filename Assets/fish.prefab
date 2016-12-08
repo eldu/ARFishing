@@ -106,9 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5492f46c1db5c4291e1502fd6f422f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bait: {fileID: 0}
+  bait: {fileID: 1000011385913434, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
   speed: 0.5
   range: {x: 10, y: 2, z: 10}
+  fishCountText: {fileID: 0}
+  fishCatalogue: {fileID: 0}
 --- !u!136 &136000010845534216
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -23,9 +23,8 @@ public class Wander : MonoBehaviour {
        rb = GetComponent<Rigidbody>();
 
 
-       GameObject[] bs = GameObject.FindGameObjectsWithTag("Lure");
-       bait = bs[0];
-
+       //GameObject[] bs = GameObject.FindGameObjectsWithTag("Lure");
+       //bait = bs[0];
        bc = bait.GetComponent<BaitComponent>();
        time = -1.0f;
     }

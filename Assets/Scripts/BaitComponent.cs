@@ -25,6 +25,7 @@ public class BaitComponent : MonoBehaviour {
         if (active)
         {
             flying = false;
+            gameObject.SetActive(true);
             lureRigidbody.useGravity = false;
             lureRigidbody.velocity = Vector3.zero;
         }
@@ -43,6 +44,7 @@ public class BaitComponent : MonoBehaviour {
     public void Retrieve()
     {
         active = false;
+        flying = false;
         gameObject.SetActive(false);
     }
 

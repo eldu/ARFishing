@@ -5,7 +5,7 @@ public class Player : MonoBehaviour {
 
     public BaitComponent baitComponent;
 
-    protected bool readyToCast;
+    protected bool readyToCast = true;
 
 	// Use this for initialization
 	void Start () {
