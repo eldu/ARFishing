@@ -19,6 +19,7 @@ public class Player : MonoBehaviour {
             var gazeDirection = Camera.main.transform.forward;
 
             baitComponent.StartFlying(headPosition, gazeDirection * acceleration);
+            readyToCast = false;
         }
     }
 

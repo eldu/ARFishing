@@ -93,10 +93,13 @@ public class TapToPlaceParent : MonoBehaviour
 
     void SpawnFish()
     {
-        Vector3 offset = new Vector3();
-        offset.y = -0.5f;
-        Transform swimmerClone = Instantiate(swimmerPrefab);
-        swimmerClone.transform.position = offset + transform.position;
-        numFish++;
+        if (!placing)
+        {
+            Vector3 offset = new Vector3();
+            offset.y = -0.5f;
+            Transform swimmerClone = Instantiate(swimmerPrefab);
+            swimmerClone.transform.position = offset + transform.position;
+            numFish++;
+        }
     }
 }
