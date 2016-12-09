@@ -46,7 +46,7 @@ Shader "Surface Reconstruction/Wireframe"
 					o.viewPos = mul(UNITY_MATRIX_MVP, v.vertex);
 				else {
 					float4 worldVertex = mul(UNITY_MATRIX_M, v.vertex);
-					worldVertex.y = (worldVertex.y < _DropDepth) ? worldVertex.y - 1.0 : worldVertex.y;
+					worldVertex.y = (worldVertex.y < _DropDepth + 0.5) ? worldVertex.y - 1.0 : worldVertex.y;
 					o.viewPos = mul(UNITY_MATRIX_VP, worldVertex);
 				}
                 return o;

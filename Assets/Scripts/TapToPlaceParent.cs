@@ -16,7 +16,12 @@ public class TapToPlaceParent : MonoBehaviour
 
     bool placing = false;
 
-    public float floorDepth;// = -10.0f;
+    public float floorDepth;
+
+    void Start()
+    {
+        floorDepth = this.transform.position.y;
+    }
 
     // Called by GazeGestureManager when the user performs a Select gesture
     void OnSelect()
@@ -61,7 +66,7 @@ public class TapToPlaceParent : MonoBehaviour
                 // Move this object's parent object to
                 // where the raycast hit the Spatial Mapping mesh.
                 this.transform.parent.position = hitInfo.point;
-                floorDepth = hitInfo.point.y + 0.5f;
+                floorDepth = hitInfo.point.y;
 
                 // Rotate this object's parent object to face the user.
                 Quaternion toQuat = Camera.main.transform.localRotation;

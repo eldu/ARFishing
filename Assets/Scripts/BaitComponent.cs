@@ -2,17 +2,23 @@
 using System.Collections;
 
 public class BaitComponent : MonoBehaviour {
-    private bool active;
-    public bool flying;
+    private bool attracting;
+
     public float strength = 5.0f; // Strength of attraction
     public float distOfDetection = 10.0f;
     public TapToPlaceParent tapToPlaceParent;
+    public float pickupDistance = 1.0f;
+
     Rigidbody lureRigidbody;
+
+    public bool flying;
 
     // Use this for initialization
     void Start () {
         gameObject.SetActive(false);
-        active = false;
+        attracting = false;
+
+        // flight stuff
         lureRigidbody = this.GetComponent<Rigidbody>();
         lureRigidbody.useGravity = false;
         lureRigidbody.velocity = Vector3.zero;
@@ -20,12 +26,11 @@ public class BaitComponent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        active = tapToPlaceParent.floorDepth > this.transform.position.y;
-        print(tapToPlaceParent.floorDepth + " " + this.transform.position.y);
-        if (active)
+        attracting = (tapToPlaceParent.floorDepth > this.transform.position.y) && gameObject.GetActive();
+
+        if (attracting && flying)
         {
             flying = false;
-            gameObject.SetActive(true);
             lureRigidbody.useGravity = false;
             lureRigidbody.velocity = Vector3.zero;
         }
@@ -34,27 +39,40 @@ public class BaitComponent : MonoBehaviour {
     public void StartFlying(Vector3 startPosition, Vector3 velocity)
     {
         gameObject.SetActive(true);
-        active = false;
+        attracting = false;
         flying = true;
         lureRigidbody.useGravity = true;
         lureRigidbody.velocity = velocity;
         this.transform.position = startPosition;
     }
 
-    public void Retrieve()
+    public void Retrieve(Vector3 playerPosition)
     {
-        active = false;
-        flying = false;
-        gameObject.SetActive(false);
+        Vector3 displacement = playerPosition - this.transform.position;
+        displacement.y = 0.0f;
+        float distance = displacement.magnitude;
+
+        // if within some threshold of player position, pick up
+        if (distance < pickupDistance)
+        {
+            attracting = false;
+            flying = false;
+            gameObject.SetActive(false);
+        }
+        // otherwise, get a little closer
+        else
+        {
+            lureRigidbody.velocity = displacement.normalized;
+        }
     }
 
-    public bool isActive()
+    public bool isAttracting()
     {
-        return active;
+        return attracting;
     }
 
-    public void setActive(bool val)
+    public void setAttracting(bool val)
     {
-        active = val;
+        attracting = val;
     }
 }

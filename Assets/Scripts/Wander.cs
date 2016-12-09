@@ -39,7 +39,7 @@ public class Wander : MonoBehaviour {
         Vector3 dir = wayPoint - transform.position; // Changes the direction that the fish looks at
         rb.velocity = transform.forward * speed;
 
-        if (bc.isActive() && dir.magnitude < bc.distOfDetection);
+        if (bc.isAttracting() && dir.magnitude < bc.distOfDetection);
         {
             Vector3 force = (bc.strength * 1.0f / dir.magnitude) * dir.normalized;
             rb.AddForce(force);
@@ -57,7 +57,7 @@ public class Wander : MonoBehaviour {
            wayPoint = new Vector3(Random.Range(transform.position.x - range.x, transform.position.x + range.x),
                                     Random.Range(transform.position.y - range.y, transform.position.y + range.y),
                                     Random.Range(transform.position.z - range.z, transform.position.z + range.z));
-        } else if (bc.isActive()) {
+        } else if (bc.isAttracting()) {
                 wayPoint = bait.transform.position;
         }
         else if (time > 5.0f) {

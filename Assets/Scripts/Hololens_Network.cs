@@ -6,7 +6,6 @@ public class Hololens_Network : Photon.PunBehaviour
     public Player player;
 
     string roomName;
-    float[] accelArray = new float[1];
 
     // LOOK-1.b: creating a room on PC
     void Start()
@@ -56,6 +55,20 @@ public class Hololens_Network : Photon.PunBehaviour
     void Awake()
     {
         PhotonNetwork.OnEventCall += this.OnEvent;
+    }
+
+    private void Update()
+    {
+        // for debugging
+        if (Input.GetKey(KeyCode.A))
+        {
+            player.Cast(30.0f);
+
+        }
+        if (Input.GetKey(KeyCode.B))
+        {
+            player.Reel();
+        }
     }
  
     // handle events:
