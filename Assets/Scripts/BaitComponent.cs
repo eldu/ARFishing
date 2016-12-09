@@ -46,7 +46,8 @@ public class BaitComponent : MonoBehaviour {
         this.transform.position = startPosition;
     }
 
-    public void Retrieve(Vector3 playerPosition)
+    // returns whether the thing has been retrieved or not
+    public bool Retrieve(Vector3 playerPosition)
     {
         Vector3 displacement = playerPosition - this.transform.position;
         displacement.y = 0.0f;
@@ -58,11 +59,13 @@ public class BaitComponent : MonoBehaviour {
             attracting = false;
             flying = false;
             gameObject.SetActive(false);
+            return true;
         }
         // otherwise, get a little closer
         else
         {
             lureRigidbody.velocity = displacement.normalized;
+            return false;
         }
     }
 

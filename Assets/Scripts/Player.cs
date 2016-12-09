@@ -24,7 +24,6 @@ public class Player : MonoBehaviour {
 
     public void Reel()
     {
-        readyToCast = true;
-        baitComponent.Retrieve(Camera.main.transform.position);
+        readyToCast = baitComponent.Retrieve(Camera.main.transform.position);
     }
 }

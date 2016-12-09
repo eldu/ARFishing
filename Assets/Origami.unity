@@ -488,6 +488,16 @@ Prefab:
       propertyPath: tapToPlaceParent
       value: 
       objectReference: {fileID: 48066604}
+    - target: {fileID: 96000013607221246, guid: ade6a0932cf1c26418ff90e73da78940,
+        type: 2}
+      propertyPath: m_StartWidth
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 96000013607221246, guid: ade6a0932cf1c26418ff90e73da78940,
+        type: 2}
+      propertyPath: m_EndWidth
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
   m_IsPrefabParent: 0
