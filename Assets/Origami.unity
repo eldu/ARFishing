@@ -1320,6 +1320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baitComponent: {fileID: 651636725}
+  network: {fileID: 884080911}
+  readyToCast: 1
 --- !u!1001 &2035436354
 Prefab:
   m_ObjectHideFlags: 0

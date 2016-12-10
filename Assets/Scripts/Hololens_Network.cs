@@ -62,13 +62,20 @@ public class Hololens_Network : Photon.PunBehaviour
         // for debugging
         if (Input.GetKey(KeyCode.A))
         {
-            player.Cast(30.0f);
+            player.Cast(0.2f, 0.5f, 0.5f);
 
         }
         if (Input.GetKey(KeyCode.B))
         {
             player.Reel();
         }
+    }
+
+    public void SignalCastingReadiness(bool readyToCast)
+    {
+        byte evCode = 2;
+        bool reliable = true;
+        PhotonNetwork.RaiseEvent(evCode, readyToCast, reliable, null);
     }
  
     // handle events:
@@ -78,8 +85,7 @@ public class Hololens_Network : Photon.PunBehaviour
         {
             PhotonPlayer sender = PhotonPlayer.Find(senderid);  // who sent this?
             float[] result = (float[])content;
-            //print(result[0]);
-            player.Cast(result[0] * 3.0f);
+            player.Cast(result[0], result[1], result[2]);
         }
         if (eventcode == 1) // reel event. should have gotten 1 byte, no need to do anything to it.
         {
