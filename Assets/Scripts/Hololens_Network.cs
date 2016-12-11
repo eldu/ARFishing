@@ -93,5 +93,10 @@ public class Hololens_Network : Photon.PunBehaviour
             player.Reel();
         }
         // eventcode 2 is for signaling back to the phone that the ball has been retrieved
+
+        if (eventcode == 3) // phone entering/exiting the casting cone
+        {
+            player.SetDrawHeldLure((bool)content);
+        }
     }
 }

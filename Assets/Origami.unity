@@ -578,6 +578,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87596db941ad3bf45a16b586b6e28b5c, type: 2}
   m_IsPrefabParent: 0
+--- !u!96 &1634224560 stripped
+TrailRenderer:
+  m_PrefabParentObject: {fileID: 96000013607221246, guid: ade6a0932cf1c26418ff90e73da78940,
+    type: 2}
+  m_PrefabInternal: {fileID: 1182149150}
 --- !u!4 &1639873145
 Transform:
   m_ObjectHideFlags: 0
@@ -1183,7 +1188,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baitComponent: {fileID: 651636725}
   network: {fileID: 884080911}
+  baitComponentTrail: {fileID: 1634224560}
   readyToCast: 1
+  showHeldLure: 0
 --- !u!1 &2022791260
 GameObject:
   m_ObjectHideFlags: 0

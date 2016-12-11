@@ -15,7 +15,6 @@ public class BaitComponent : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        gameObject.SetActive(false);
         attracting = false;
 
         // flight stuff
@@ -26,7 +25,7 @@ public class BaitComponent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        attracting = (tapToPlaceParent.floorDepth > this.transform.position.y) && gameObject.GetActive();
+        attracting = (tapToPlaceParent.floorDepth > this.transform.position.y);
 
         if (attracting && flying)
         {
@@ -38,7 +37,6 @@ public class BaitComponent : MonoBehaviour {
 
     public void StartFlying(Vector3 startPosition, Vector3 velocity)
     {
-        gameObject.SetActive(true);
         attracting = false;
         flying = true;
         lureRigidbody.useGravity = true;
@@ -58,7 +56,6 @@ public class BaitComponent : MonoBehaviour {
         {
             attracting = false;
             flying = false;
-            gameObject.SetActive(false);
             return true;
         }
         // otherwise, get a little closer

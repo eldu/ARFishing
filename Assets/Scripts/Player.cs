@@ -4,15 +4,32 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
     public BaitComponent baitComponent;
+    public TrailRenderer baitComponentTrail;
+
     public Hololens_Network network;
 
     public bool readyToCast = true;
+
+    public bool showHeldLure = false;
 
     Vector3 launchDir;
 
 	// Use this for initialization
 	void Start () {
-	}
+        showHeldLure = false;
+    }
+
+    void Update()
+    {
+        if (readyToCast)
+        {
+            var headPosition = Camera.main.transform.position;
+            var initialBaitPosition = headPosition + Camera.main.transform.forward * 0.7f;
+            baitComponent.transform.position = initialBaitPosition;
+            baitComponent.gameObject.SetActive(showHeldLure);
+            baitComponentTrail.enabled = false;
+        }
+    }
 
     public void Cast(float acceleration, float acceleromX, float acceleromY)
     {
@@ -20,7 +37,8 @@ public class Player : MonoBehaviour {
         {
             // TODO: use accelerometer x and y to compute a direction for the toss
             // These are raw from the device.
-
+            baitComponent.gameObject.SetActive(true);
+            baitComponentTrail.enabled = true;
 
             print(acceleration + " x " + acceleromX + " y " + acceleromY);
 
@@ -58,11 +76,11 @@ public class Player : MonoBehaviour {
     public void ResetBait()
     {
         baitComponent.transform.position = Camera.main.transform.position;
-        bool nowReadyToCast = baitComponent.Retrieve(Camera.main.transform.position);
-        if (nowReadyToCast != readyToCast)
-        {
-            network.SignalCastingReadiness(nowReadyToCast);
-        }
-        readyToCast = nowReadyToCast;
+        Reel();
+    }
+
+    public void SetDrawHeldLure(bool draw)
+    {
+        showHeldLure = draw;
     }
 }
