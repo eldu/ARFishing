@@ -109,7 +109,33 @@ public class TapToPlaceParent : MonoBehaviour
     void chooseFishToSpawn()
     {
         //sets swimmerPrefab
+        float randomNumber = Random.Range(0.0f, 1.0f);
+        if (randomNumber >= 0.0f && randomNumber < 0.5f)
+        {
+            // koi fish
+            swimmerPrefab = typesOfFish[0].transform;
 
+        } else if (randomNumber >= 0.5f && randomNumber < 0.75f)
+        {
+            // small fish
+            swimmerPrefab = typesOfFish[1].transform;
+
+        } else if (randomNumber >= 0.75f && randomNumber < 0.85f)
+        {
+            // magikarp
+            swimmerPrefab = typesOfFish[2].transform;
+
+        } else if (randomNumber >= 0.85f && randomNumber < 0.95f)
+        {
+            // pocket whale
+            swimmerPrefab = typesOfFish[3].transform;
+
+        } else if (randomNumber >= 0.95f && randomNumber < 1.0f)
+        {
+            // credit card phish
+            swimmerPrefab = typesOfFish[4].transform;
+
+        }
     }
   
 }

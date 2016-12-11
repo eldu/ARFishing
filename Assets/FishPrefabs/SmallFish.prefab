@@ -9,22 +9,22 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000011816580496}
+  m_RootGameObject: {fileID: 1000010619065852}
   m_IsPrefabParent: 1
---- !u!1 &1000011816580496
+--- !u!1 &1000010619065852
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000010919343034}
-  - 33: {fileID: 33000012701091618}
-  - 23: {fileID: 23000010829187236}
-  - 114: {fileID: 114000011858901012}
-  - 54: {fileID: 54000010509570354}
-  - 136: {fileID: 136000014167182478}
-  - 114: {fileID: 114000011862806386}
+  - 4: {fileID: 4000012203357122}
+  - 33: {fileID: 33000010522629050}
+  - 23: {fileID: 23000010485660526}
+  - 114: {fileID: 114000011668967456}
+  - 54: {fileID: 54000012362398090}
+  - 136: {fileID: 136000010459892234}
+  - 114: {fileID: 114000012879894876}
   m_Layer: 8
   m_Name: SmallFish
   m_TagString: Fish
@@ -32,25 +32,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000010919343034
+--- !u!4 &4000012203357122
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011816580496}
+  m_GameObject: {fileID: 1000010619065852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.9552972, y: -5.971291, z: 3.041753}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.5}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &23000010829187236
+--- !u!23 &23000010485660526
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011816580496}
+  m_GameObject: {fileID: 1000010619065852}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -74,19 +74,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33000012701091618
+--- !u!33 &33000010522629050
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011816580496}
+  m_GameObject: {fileID: 1000010619065852}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54000010509570354
+--- !u!54 &54000012362398090
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011816580496}
+  m_GameObject: {fileID: 1000010619065852}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -96,12 +96,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114000011858901012
+--- !u!114 &114000011668967456
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011816580496}
+  m_GameObject: {fileID: 1000010619065852}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d5492f46c1db5c4291e1502fd6f422f, type: 3}
@@ -110,12 +110,12 @@ MonoBehaviour:
   bait: {fileID: 1000011385913434, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
   speed: 0.5
   range: {x: 10, y: 2, z: 10}
---- !u!114 &114000011862806386
+--- !u!114 &114000012879894876
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011816580496}
+  m_GameObject: {fileID: 1000010619065852}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed759cb5e0cb3e74da600479b851d433, type: 3}
@@ -123,15 +123,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishName: Small Fish
   fishDescription: A small fish.
-  fishWeight: 0.05 lbs
+  fishWeight: 0.01 lbs
   fishRarity: 0.25
   fishPhoto: {fileID: 0}
---- !u!136 &136000014167182478
+--- !u!136 &136000010459892234
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011816580496}
+  m_GameObject: {fileID: 1000010619065852}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
