@@ -55,6 +55,10 @@ public class Player : MonoBehaviour {
 
             // rotate launchDir so it points in the same direction as gazeDirection in the xz plane
             float angle = Mathf.Acos(gazeDirection.x); // angle between X dir and gazeDirection in x z plane
+            if (gazeDirection.z < 0.0f)
+            {
+                angle = -angle;
+            }
             launchDir = Quaternion.Euler(0, -Mathf.Rad2Deg * angle, 0) * launchDir;
 
             baitComponent.StartFlying(initialBaitPosition, launchDir * acceleration * 20.0f);
