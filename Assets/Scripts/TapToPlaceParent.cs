@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class TapToPlaceParent : MonoBehaviour
 {
-    public Transform swimmerPrefab;
     public int swimmerSpawnInterval;
     public Material scanMeshMaterial;
 
@@ -17,6 +16,9 @@ public class TapToPlaceParent : MonoBehaviour
     bool placing = true;
 
     public float floorDepth;
+
+    public List<GameObject> typesOfFish;
+    private Transform swimmerPrefab;
 
     void Start()
     {
@@ -96,10 +98,18 @@ public class TapToPlaceParent : MonoBehaviour
 
     void SpawnFish()
     {
+        chooseFishToSpawn();
         Vector3 offset = new Vector3();
         offset.y = -0.5f;
         Transform swimmerClone = Instantiate(swimmerPrefab);
         swimmerClone.transform.position = offset + transform.position;
         numFish++;
     }
+
+    void chooseFishToSpawn()
+    {
+        //sets swimmerPrefab
+
+    }
+  
 }

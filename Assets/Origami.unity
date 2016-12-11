@@ -102,12 +102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 769c95d7d86270e4fafb1ad8e0b9f6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swimmerPrefab: {fileID: 4000013991276960, guid: 1b32179966acbaf429ce37102fafa7cc,
-    type: 2}
   swimmerSpawnInterval: 60
   scanMeshMaterial: {fileID: 2100000, guid: 4b0f3315a044218428165ca0893aa0b5, type: 2}
   maxNumFish: 15
   floorDepth: 0
+  typesOfFish:
+  - {fileID: 1000012037343942, guid: 1801cb5c8751e71479e1395ecbe80ec2, type: 2}
+  - {fileID: 1000011816580496, guid: 7eb7e63435be1f043ba9cf5935f417e6, type: 2}
 --- !u!1 &416279442
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +992,52 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1731757923}
+--- !u!1001 &1745311362
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000012714048534, guid: b2f7e022f9ea0f0438802fb7f2b9996e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.9552972
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012714048534, guid: b2f7e022f9ea0f0438802fb7f2b9996e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.971291
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012714048534, guid: b2f7e022f9ea0f0438802fb7f2b9996e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3.041753
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012714048534, guid: b2f7e022f9ea0f0438802fb7f2b9996e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012714048534, guid: b2f7e022f9ea0f0438802fb7f2b9996e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012714048534, guid: b2f7e022f9ea0f0438802fb7f2b9996e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012714048534, guid: b2f7e022f9ea0f0438802fb7f2b9996e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012714048534, guid: b2f7e022f9ea0f0438802fb7f2b9996e, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012041865272, guid: b2f7e022f9ea0f0438802fb7f2b9996e, type: 2}
+      propertyPath: m_Name
+      value: fish
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b2f7e022f9ea0f0438802fb7f2b9996e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1785510309
 Prefab:
   m_ObjectHideFlags: 0
@@ -1187,8 +1234,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baitComponent: {fileID: 651636725}
-  network: {fileID: 884080911}
   baitComponentTrail: {fileID: 1634224560}
+  network: {fileID: 884080911}
   readyToCast: 1
   showHeldLure: 0
 --- !u!1 &2022791260

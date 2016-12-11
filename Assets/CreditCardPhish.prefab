@@ -9,35 +9,35 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000013896872146}
+  m_RootGameObject: {fileID: 1000010781356632}
   m_IsPrefabParent: 1
---- !u!1 &1000013896872146
+--- !u!1 &1000010781356632
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000013991276960}
-  - 33: {fileID: 33000011138141358}
-  - 23: {fileID: 23000010920601882}
-  - 114: {fileID: 114000010004610118}
-  - 54: {fileID: 54000012801209828}
-  - 136: {fileID: 136000010845534216}
-  - 114: {fileID: 114000011758335482}
+  - 4: {fileID: 4000012818815730}
+  - 33: {fileID: 33000011548799874}
+  - 23: {fileID: 23000010980152550}
+  - 114: {fileID: 114000011155069656}
+  - 54: {fileID: 54000012041003206}
+  - 136: {fileID: 136000012083435062}
+  - 114: {fileID: 114000012698368984}
   m_Layer: 8
-  m_Name: fish
+  m_Name: CreditCardPhish
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000013991276960
+--- !u!4 &4000012818815730
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013896872146}
+  m_GameObject: {fileID: 1000010781356632}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.9552972, y: -5.971291, z: 3.041753}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
@@ -45,12 +45,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &23000010920601882
+--- !u!23 &23000010980152550
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013896872146}
+  m_GameObject: {fileID: 1000010781356632}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -74,19 +74,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33000011138141358
+--- !u!33 &33000011548799874
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013896872146}
+  m_GameObject: {fileID: 1000010781356632}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54000012801209828
+--- !u!54 &54000012041003206
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013896872146}
+  m_GameObject: {fileID: 1000010781356632}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -96,12 +96,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114000010004610118
+--- !u!114 &114000011155069656
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013896872146}
+  m_GameObject: {fileID: 1000010781356632}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d5492f46c1db5c4291e1502fd6f422f, type: 3}
@@ -110,28 +110,29 @@ MonoBehaviour:
   bait: {fileID: 1000011385913434, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
   speed: 0.5
   range: {x: 10, y: 2, z: 10}
---- !u!114 &114000011758335482
+--- !u!114 &114000012698368984
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013896872146}
+  m_GameObject: {fileID: 1000010781356632}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed759cb5e0cb3e74da600479b851d433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishName: fish
-  fishDescription: fish
-  fishWeight: 1.0 lbs
-  fishRarity: 0
+  fishName: Credit Card Phish
+  fishDescription: A ghostly looking fish, with someone's credit card numbers etched
+    faintly on its skin.
+  fishWeight: 0.10 lbs
+  fishRarity: 0.05
   fishPhoto: {fileID: 0}
---- !u!136 &136000010845534216
+--- !u!136 &136000012083435062
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013896872146}
+  m_GameObject: {fileID: 1000010781356632}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
