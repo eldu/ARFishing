@@ -25,6 +25,7 @@ public class Player : MonoBehaviour {
             print(acceleration + " x " + acceleromX + " y " + acceleromY);
 
             var headPosition = Camera.main.transform.position;
+            var initialBaitPosition = headPosition + Camera.main.transform.forward * 0.5f - Camera.main.transform.up*0.25f;
             var gazeDirection = Camera.main.transform.forward;
             gazeDirection.y = 0.0f;
             gazeDirection.Normalize();
@@ -38,7 +39,7 @@ public class Player : MonoBehaviour {
             float angle = Mathf.Acos(gazeDirection.x); // angle between X dir and gazeDirection in x z plane
             launchDir = Quaternion.Euler(0, -Mathf.Rad2Deg * angle, 0) * launchDir;
 
-            baitComponent.StartFlying(headPosition, launchDir * acceleration * 20.0f);
+            baitComponent.StartFlying(initialBaitPosition, launchDir * acceleration * 20.0f);
             readyToCast = false;
             network.SignalCastingReadiness(false);
         }
@@ -46,6 +47,17 @@ public class Player : MonoBehaviour {
 
     public void Reel()
     {
+        bool nowReadyToCast = baitComponent.Retrieve(Camera.main.transform.position);
+        if (nowReadyToCast != readyToCast)
+        {
+            network.SignalCastingReadiness(nowReadyToCast);
+        }
+        readyToCast = nowReadyToCast;
+    }
+
+    public void ResetBait()
+    {
+        baitComponent.transform.position = Camera.main.transform.position;
         bool nowReadyToCast = baitComponent.Retrieve(Camera.main.transform.position);
         if (nowReadyToCast != readyToCast)
         {

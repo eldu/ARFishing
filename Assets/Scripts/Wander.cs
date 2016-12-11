@@ -15,8 +15,8 @@ public class Wander : MonoBehaviour {
 
     Rigidbody rb;
 
-    public Text fishCountText;
-    public FishCatalogue fishCatalogue;
+    private Text fishCountText;
+    private FishCatalogue fishCatalogue;
     
 	// Use this for initialization
 	void Start () {
@@ -73,12 +73,12 @@ public class Wander : MonoBehaviour {
     void OnSelect()
     {
         fishCatalogue = GameObject.Find("FishCatalogue").GetComponent<FishCatalogue>();
-        fishCountText = GameObject.Find("fishCount").GetComponent<Text>();
-        fishCatalogue.fishCount++;
-        fishCountText.text = fishCatalogue.fishCount.ToString();
+        fishCountText = GameObject.Find("fishesCaughtCount").GetComponent<Text>();
+        fishCatalogue.fishesCaughtCount++;
+        fishCountText.text = fishCatalogue.fishesCaughtCount.ToString();
 
-        Debug.Log(fishCatalogue.name);
-        Debug.Log(fishCountText.text);
+        //Debug.Log(fishCatalogue.name);
+       // Debug.Log(fishCountText.text);
         Destroy(gameObject);
     }
 }

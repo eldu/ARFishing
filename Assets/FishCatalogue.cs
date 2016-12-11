@@ -3,11 +3,11 @@ using System.Collections;
 
 public class FishCatalogue : MonoBehaviour {
 
-    public int fishCount;
+    public int fishesCaughtCount;
 
 	// Use this for initialization
 	void Start () {
-        fishCount = 0;
+        fishesCaughtCount = 0;
 	}
 	
 	// Update is called once per frame

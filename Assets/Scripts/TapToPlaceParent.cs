@@ -14,20 +14,23 @@ public class TapToPlaceParent : MonoBehaviour
     int swimmerSpawnTimer;
     bool readyToSpawnFish = false;
 
-    bool placing = false;
+    bool placing = true;
 
     public float floorDepth;
 
     void Start()
     {
         floorDepth = this.transform.position.y;
+
+        SpatialMapping.Instance.DrawVisualMeshes = true; // draw the visual mesh as-is
+        scanMeshMaterial.SetInt("_Invisible", 0);
     }
 
     // Called by GazeGestureManager when the user performs a Select gesture
     void OnSelect()
     {
         // ALPHA: after first placing, start spawning fish
-        if (placing) readyToSpawnFish = true;
+        if (!placing) readyToSpawnFish = true;
 
         // On each Select gesture, toggle whether the user is in placing mode.
         placing = !placing;

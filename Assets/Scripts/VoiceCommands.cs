@@ -25,7 +25,7 @@ public class VoiceCommands : MonoBehaviour {
         Vector3 offset = new Vector3();
         offset.z = 0.5f;
         MenuPrefab.SetActive(true);
-        UnityEngine.Debug.Log("Menu???");
+        //UnityEngine.Debug.Log("Menu???");
     }
 
     public void HideMenu()

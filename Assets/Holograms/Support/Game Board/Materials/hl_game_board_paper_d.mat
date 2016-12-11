@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: hl_game_board_paper_d
-  m_Shader: {fileID: 10701, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 2782662d6263cbb479829be3d5c71cd7, type: 3}
   m_ShaderKeywords: _LIGHTMAPPING_REALTIME
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -17,6 +17,12 @@ Material:
     m_TexEnvs:
     - first:
         name: _BumpMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Cube
       second:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -71,6 +77,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
+        name: _Alpha
+      second: 1
+    - first:
+        name: _Brightness
+      second: 1
+    - first:
         name: _BumpScale
       second: 1
     - first:
@@ -89,6 +101,9 @@ Material:
         name: _Glossiness
       second: 0
     - first:
+        name: _Iridecence
+      second: 0.02
+    - first:
         name: _Lightmapping
       second: 1
     - first:
@@ -103,6 +118,15 @@ Material:
     - first:
         name: _Parallax
       second: 0.02
+    - first:
+        name: _ReflectionAmount
+      second: 0.5
+    - first:
+        name: _ReflectionBlur
+      second: 0
+    - first:
+        name: _Side_Brightness
+      second: 1
     - first:
         name: _SrcBlend
       second: 1
@@ -121,4 +145,13 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _EmissionColorUI
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _Light_Dir
+      second: {r: 0.5, g: -1, b: 0, a: 10}
+    - first:
+        name: _Material_Color
+      second: {r: 0, g: 0.5, b: 1, a: 1}
+    - first:
+        name: _Reflection_Tint
       second: {r: 1, g: 1, b: 1, a: 1}
