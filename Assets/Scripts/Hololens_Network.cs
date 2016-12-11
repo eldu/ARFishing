@@ -92,5 +92,6 @@ public class Hololens_Network : Photon.PunBehaviour
             //print("reeling in!");
             player.Reel();
         }
+        // eventcode 2 is for signaling back to the phone that the ball has been retrieved
     }
 }

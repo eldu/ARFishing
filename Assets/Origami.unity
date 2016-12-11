@@ -459,16 +459,6 @@ Prefab:
       propertyPath: tapToPlaceParent
       value: 
       objectReference: {fileID: 48066604}
-    - target: {fileID: 135000011667288946, guid: ade6a0932cf1c26418ff90e73da78940,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013098451132, guid: ade6a0932cf1c26418ff90e73da78940,
-        type: 2}
-      propertyPath: flying
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
   m_IsPrefabParent: 0

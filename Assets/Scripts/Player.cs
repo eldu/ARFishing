@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
             print(acceleration + " x " + acceleromX + " y " + acceleromY);
 
             var headPosition = Camera.main.transform.position;
-            var initialBaitPosition = headPosition + Camera.main.transform.forward * 0.5f - Camera.main.transform.up*0.25f;
+            var initialBaitPosition = headPosition + Camera.main.transform.forward * 0.7f;
             var gazeDirection = Camera.main.transform.forward;
             gazeDirection.y = 0.0f;
             gazeDirection.Normalize();
