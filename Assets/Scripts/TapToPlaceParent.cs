@@ -30,7 +30,7 @@ public class TapToPlaceParent : MonoBehaviour
     void OnSelect()
     {
         // ALPHA: after first placing, start spawning fish
-        if (!placing) readyToSpawnFish = true;
+        if (placing) readyToSpawnFish = true;
 
         // On each Select gesture, toggle whether the user is in placing mode.
         placing = !placing;
@@ -96,13 +96,10 @@ public class TapToPlaceParent : MonoBehaviour
 
     void SpawnFish()
     {
-        if (!placing)
-        {
-            Vector3 offset = new Vector3();
-            offset.y = -0.5f;
-            Transform swimmerClone = Instantiate(swimmerPrefab);
-            swimmerClone.transform.position = offset + transform.position;
-            numFish++;
-        }
+        Vector3 offset = new Vector3();
+        offset.y = -0.5f;
+        Transform swimmerClone = Instantiate(swimmerPrefab);
+        swimmerClone.transform.position = offset + transform.position;
+        numFish++;
     }
 }
