@@ -77,6 +77,12 @@ public class Wander : MonoBehaviour {
         fishCatalogue.fishesCaughtCount++;
         fishCountText.text = fishCatalogue.fishesCaughtCount.ToString();
 
+        if (!fishCatalogue.typesOfFishCaught.Contains(gameObject.GetComponent<FishInfo>()))
+        {
+            fishCatalogue.typesOfFishCaught.Add(gameObject.GetComponent<FishInfo>());
+            fishCatalogue.AddFishToCatalogue(gameObject.GetComponent<FishInfo>());
+        }
+
         //Debug.Log(fishCatalogue.name);
        // Debug.Log(fishCountText.text);
         Destroy(gameObject);

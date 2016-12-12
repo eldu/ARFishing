@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class FishCatalogue : MonoBehaviour {
 
     public int fishesCaughtCount;
+    public HashSet<FishInfo> typesOfFishCaught;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         fishesCaughtCount = 0;
 	}
 	
@@ -14,4 +16,9 @@ public class FishCatalogue : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void AddFishToCatalogue(FishInfo newFish)
+    {
+        Text newText
+    }
 }
