@@ -19,6 +19,6 @@ public class FishCatalogue : MonoBehaviour {
 
     public void AddFishToCatalogue(FishInfo newFish)
     {
-        Text newText
+        Text newFishInfo = Instantiate(gameObject.GetComponentInChildren<Text>()); 
     }
 }
