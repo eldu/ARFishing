@@ -4,14 +4,20 @@ using System.Collections;
 
 public class Wander : MonoBehaviour {
     // Components
-    public GameObject bait;
-    private BaitComponent bc;
+    public TapToPlaceParent worldInfo;
+    public BaitComponent bait;
 
     public float speed = 0.5f;
+    public float turnSpeed = 0.3f; // turnSpeed in max degrees that can be rotated in one second
+    public float maxWaypointTime = 5.0f;
+    public float minWaypointTime = 1.0f;
+    float curWaypointTime = 0.0f;
+
     public Vector3 range = new Vector3(10.0f, 2.0f, 10.0f); // Range of Motion in x y z directions
 
-    private Vector3 wayPoint = new Vector3();
+    public Vector3 wayPoint = new Vector3();
     private float time = 0.0f;
+    private bool beingAttracted = false;
 
     Rigidbody rb;
 
@@ -21,50 +27,69 @@ public class Wander : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
        rb = GetComponent<Rigidbody>();
-
-
-       //GameObject[] bs = GameObject.FindGameObjectsWithTag("Lure");
-       //bait = bs[0];
-       bc = bait.GetComponent<BaitComponent>();
        time = -1.0f;
     }
 	
 	// Update is called once per frame
 	void Update () {
         // Go towards the wayPoint
+        float deltaTime = Time.deltaTime;
 
         Vector3 wayPoint = getWayPoint();
-        transform.LookAt(wayPoint);
 
-        Vector3 dir = wayPoint - transform.position; // Changes the direction that the fish looks at
-        rb.velocity = transform.forward * speed;
+        // turn to look more at waypoint
+        Vector3 dirToWayPoint = (wayPoint - transform.position).normalized;
+        float dot = Vector3.Dot(dirToWayPoint, transform.forward);
+        Vector3 axis = Vector3.Cross(transform.forward, dirToWayPoint);
+        if (axis.y < 0.0f)
+            transform.Rotate(-Vector3.up, turnSpeed * deltaTime * (1.0f - dot));
+        else
+            transform.Rotate(Vector3.up, turnSpeed * deltaTime * (1.0f - dot));
 
+        //Vector3 dir = wayPoint - transform.position; // Changes the direction that the fish looks at
+        if (dot > 0.8f)
+            rb.velocity = dirToWayPoint * speed;
+        else
+            rb.velocity = transform.forward * speed;
+
+        /*
         if (bc.isAttracting() && dir.magnitude < bc.distOfDetection);
         {
             Vector3 force = (bc.strength * 1.0f / dir.magnitude) * dir.normalized;
             rb.AddForce(force);
         }
-
-        time += Time.deltaTime;
+         */
+        time -= deltaTime;
     }
 
     private Vector3 getWayPoint()
     {
-        if (time < 0.0f)
+        if (time < 0.0f && !beingAttracted)
         {
-        // Initial
-           time = 0.0f;
+           time = Random.Range(minWaypointTime, maxWaypointTime);
            wayPoint = new Vector3(Random.Range(transform.position.x - range.x, transform.position.x + range.x),
-                                    Random.Range(transform.position.y - range.y, transform.position.y + range.y),
+                                    worldInfo.floorDepth - Random.Range(0.0f, transform.position.y + range.y),
                                     Random.Range(transform.position.z - range.z, transform.position.z + range.z));
-        } else if (bc.isAttracting()) {
-                wayPoint = bait.transform.position;
         }
-        else if (time > 5.0f) {
-            time = 0.0f;
-            wayPoint = new Vector3(Random.Range(transform.position.x - range.x, transform.position.x + range.x),
-                                    Random.Range(transform.position.y - range.y, transform.position.y + range.y),
-                                    Random.Range(transform.position.z - range.z, transform.position.z + range.z));
+
+        // check if the bait is visible. if so, go at it.
+        if (bait.isAttracting())
+        {
+            if (beingAttracted) wayPoint = bait.transform.position;
+            else
+            {
+                Vector3 dirToBait = bait.transform.position - transform.position;
+                float dot = Vector3.Dot(dirToBait.normalized, transform.forward);
+                if (dirToBait.magnitude < bait.pickupDistance && dot > 0.0f)
+                {
+                    wayPoint = bait.transform.position;
+                    beingAttracted = true;
+                }
+            }
+        }
+        else
+        {
+            beingAttracted = false;
         }
 
         return wayPoint;

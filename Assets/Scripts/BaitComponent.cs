@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BaitComponent : MonoBehaviour {
-    private bool attracting;
+    public bool attracting;
 
     public float strength = 5.0f; // Strength of attraction
     public float distOfDetection = 10.0f;

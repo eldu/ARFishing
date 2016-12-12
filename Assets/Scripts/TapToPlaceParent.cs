@@ -5,6 +5,7 @@ public class TapToPlaceParent : MonoBehaviour
 {
     public int swimmerSpawnInterval;
     public Material scanMeshMaterial;
+    public BaitComponent bait;
 
     // private List<GameObject> fishies;
     private int numFish;
@@ -103,6 +104,10 @@ public class TapToPlaceParent : MonoBehaviour
         offset.y = -0.5f;
         Transform swimmerClone = Instantiate(swimmerPrefab);
         swimmerClone.transform.position = offset + transform.position;
+        Wander wanderComponent = swimmerClone.GetComponent<Wander>();
+        wanderComponent.worldInfo = this;
+        wanderComponent.bait = bait;
+
         numFish++;
     }
 
