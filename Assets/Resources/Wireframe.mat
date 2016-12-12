@@ -81,7 +81,7 @@ Material:
       second: 1
     - first:
         name: _DropDepth
-      second: 0
+      second: -0.665
     - first:
         name: _DstBlend
       second: 0
@@ -96,7 +96,7 @@ Material:
       second: 1
     - first:
         name: _Invisible
-      second: 0
+      second: 1
     - first:
         name: _Metallic
       second: 0

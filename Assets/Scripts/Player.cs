@@ -73,6 +73,14 @@ public class Player : MonoBehaviour {
         if (nowReadyToCast != readyToCast)
         {
             network.SignalCastingReadiness(nowReadyToCast);
+            
+            // TODO: update got fish!
+            if (nowReadyToCast == true && baitComponent.hooked != null)
+            {
+                print("got " + baitComponent.hooked.GetComponent<FishInfo>().fishName);
+                Destroy(baitComponent.hooked);
+                baitComponent.hooked = null;
+            }
         }
         readyToCast = nowReadyToCast;
     }

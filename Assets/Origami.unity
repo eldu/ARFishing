@@ -785,6 +785,11 @@ Prefab:
       propertyPath: tapToPlaceParent
       value: 
       objectReference: {fileID: 48066604}
+    - target: {fileID: 114000013098451132, guid: ade6a0932cf1c26418ff90e73da78940,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1951764544}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
   m_IsPrefabParent: 0

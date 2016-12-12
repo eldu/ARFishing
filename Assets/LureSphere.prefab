@@ -157,10 +157,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a45f9df3c14f96459850b854d665fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 5
+  attracting: 0
+  hookDistance: 0.5
   distOfDetection: 10
   tapToPlaceParent: {fileID: 0}
   pickupDistance: 1
+  hooked: {fileID: 0}
+  player: {fileID: 0}
   flying: 0
 --- !u!135 &135000011667288946
 SphereCollider:

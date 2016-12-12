@@ -4,10 +4,13 @@ using System.Collections;
 public class BaitComponent : MonoBehaviour {
     public bool attracting;
 
-    public float strength = 5.0f; // Strength of attraction
+    public float hookDistance = 0.5f; // distance at which an attracted fish is "hooked"
     public float distOfDetection = 10.0f;
     public TapToPlaceParent tapToPlaceParent;
     public float pickupDistance = 1.0f;
+
+    public GameObject hooked;
+    public Player player;
 
     Rigidbody lureRigidbody;
 
@@ -16,7 +19,7 @@ public class BaitComponent : MonoBehaviour {
     // Use this for initialization
     void Start () {
         attracting = false;
-
+        hooked = null;
         // flight stuff
         lureRigidbody = this.GetComponent<Rigidbody>();
         lureRigidbody.useGravity = false;
@@ -37,6 +40,7 @@ public class BaitComponent : MonoBehaviour {
 
     public void StartFlying(Vector3 startPosition, Vector3 velocity)
     {
+        hooked = null;
         attracting = false;
         flying = true;
         lureRigidbody.useGravity = true;
@@ -68,11 +72,31 @@ public class BaitComponent : MonoBehaviour {
 
     public bool isAttracting()
     {
-        return attracting;
+        return attracting && hooked == null;
     }
 
     public void setAttracting(bool val)
     {
         attracting = val;
+    }
+
+    public bool isEssentiallyStill()
+    {
+        return lureRigidbody.velocity.magnitude < 0.001f;
+    }
+
+    public void reset()
+    {
+        player.ResetBait();
+    }
+
+    public Vector3 getDirection()
+    {
+        return lureRigidbody.velocity.normalized;
+    }
+
+    public void drag(Vector3 newPos)
+    {
+        this.transform.position = newPos;
     }
 }

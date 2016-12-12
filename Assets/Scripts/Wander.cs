@@ -11,13 +11,15 @@ public class Wander : MonoBehaviour {
     public float turnSpeed = 0.3f; // turnSpeed in max degrees that can be rotated in one second
     public float maxWaypointTime = 5.0f;
     public float minWaypointTime = 1.0f;
-    float curWaypointTime = 0.0f;
+    public float hookTime = 10.0f;
 
     public Vector3 range = new Vector3(10.0f, 2.0f, 10.0f); // Range of Motion in x y z directions
 
     public Vector3 wayPoint = new Vector3();
     private float time = 0.0f;
+    float curHookTime = 0.0f;
     private bool beingAttracted = false;
+    private bool hooked = false;
 
     Rigidbody rb;
 
@@ -34,6 +36,53 @@ public class Wander : MonoBehaviour {
 	void Update () {
         // Go towards the wayPoint
         float deltaTime = Time.deltaTime;
+        float currSpeed = speed;
+
+        // check if this is hooked
+        if (beingAttracted)
+        {
+            Vector3 dirToBait = bait.transform.position - transform.position;
+            if (dirToBait.magnitude < bait.hookDistance)
+            {
+                bait.hooked = gameObject;
+                hooked = true;
+                curHookTime = hookTime;
+                print("hooked!");
+            }
+        }
+
+        // if this is hooked, then move with the lure's velocity if any.
+        // if the lure has virtually no velocity, pull the lure.
+        // Decrement the lure time.
+        if (hooked)
+        {
+            curHookTime -= deltaTime;
+
+            // check if done being lured
+            if (curHookTime < 0.0f)
+            {
+                bait.hooked = null;
+                bait.reset();
+                hooked = false;
+                print("fish got away!");
+            }
+
+            if (bait.isEssentiallyStill())
+            {
+                currSpeed *= 0.5f; // slow the fish down b/c dragging a lure
+
+                // update lure position
+                bait.drag(this.transform.position);
+            }
+            else
+            {
+                Vector3 newPos = bait.transform.position;
+                newPos.y = transform.position.y;
+                transform.position = newPos;
+                transform.forward = bait.getDirection();
+                return; // being towed, skip standard waypoint handling
+            }
+        }
 
         Vector3 wayPoint = getWayPoint();
 
@@ -46,19 +95,12 @@ public class Wander : MonoBehaviour {
         else
             transform.Rotate(Vector3.up, turnSpeed * deltaTime * (1.0f - dot));
 
-        //Vector3 dir = wayPoint - transform.position; // Changes the direction that the fish looks at
+        // if already pointing roughly at the waypoint, just move directly towards it
         if (dot > 0.8f)
-            rb.velocity = dirToWayPoint * speed;
+            rb.velocity = dirToWayPoint * currSpeed;
         else
-            rb.velocity = transform.forward * speed;
+            rb.velocity = transform.forward * currSpeed;
 
-        /*
-        if (bc.isAttracting() && dir.magnitude < bc.distOfDetection);
-        {
-            Vector3 force = (bc.strength * 1.0f / dir.magnitude) * dir.normalized;
-            rb.AddForce(force);
-        }
-         */
         time -= deltaTime;
     }
 
