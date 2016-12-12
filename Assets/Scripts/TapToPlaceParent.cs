@@ -81,6 +81,12 @@ public class TapToPlaceParent : MonoBehaviour
                 this.transform.parent.rotation = toQuat;
             }
         }
+
+        // debug
+        if (Input.GetKey(KeyCode.P))
+        {
+            OnSelect();
+        }
     }
 
     void FixedUpdate()

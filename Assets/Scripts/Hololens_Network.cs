@@ -62,7 +62,7 @@ public class Hololens_Network : Photon.PunBehaviour
         // for debugging
         if (Input.GetKey(KeyCode.A))
         {
-            player.Cast(0.2f, 0.5f, 0.5f);
+            player.Cast(0.5f, 0.5f, 0.5f);
 
         }
         if (Input.GetKey(KeyCode.B))
