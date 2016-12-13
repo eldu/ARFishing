@@ -76,10 +76,13 @@ public class Wander : MonoBehaviour {
             }
             else
             {
-                Vector3 newPos = bait.transform.position;
-                newPos.y = transform.position.y;
-                transform.position = newPos;
+                Vector3 displace = this.transform.position - bait.transform.position;
+                if (displace.magnitude > bait.hookDistance)
+                {
+                    this.transform.position = bait.transform.position + displace.normalized * bait.hookDistance;
+                }
                 transform.forward = bait.getDirection();
+
                 return; // being towed, skip standard waypoint handling
             }
         }
@@ -102,6 +105,14 @@ public class Wander : MonoBehaviour {
             rb.velocity = transform.forward * currSpeed;
 
         time -= deltaTime;
+
+        // enforce some rules: fish can't leave the surface
+        if (transform.position.y > worldInfo.floorDepth - 1.0f)
+        {
+            Vector3 correctedPosition = transform.position;
+            correctedPosition.y = worldInfo.floorDepth;
+            transform.position = correctedPosition;
+        }
     }
 
     private Vector3 getWayPoint()

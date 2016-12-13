@@ -97,6 +97,10 @@ public class BaitComponent : MonoBehaviour {
 
     public void drag(Vector3 newPos)
     {
-        this.transform.position = newPos;
+        Vector3 displace = this.transform.position - newPos;
+        if (displace.magnitude > hookDistance)
+        {
+            this.transform.position = newPos + displace.normalized * hookDistance;
+        }
     }
 }
