@@ -42,6 +42,7 @@ public class Wander : MonoBehaviour {
         if (beingAttracted)
         {
             Vector3 dirToBait = bait.transform.position - transform.position;
+            dirToBait.y = 0.0f;
             if (dirToBait.magnitude < bait.hookDistance)
             {
                 bait.hooked = gameObject;
@@ -81,7 +82,11 @@ public class Wander : MonoBehaviour {
                 {
                     this.transform.position = bait.transform.position + displace.normalized * bait.hookDistance;
                 }
-                transform.forward = bait.getDirection();
+
+                // turn to go with the lure
+                displace.y = 0.0f;
+                displace.Normalize();
+                transform.forward = -displace;
 
                 return; // being towed, skip standard waypoint handling
             }
@@ -107,10 +112,10 @@ public class Wander : MonoBehaviour {
         time -= deltaTime;
 
         // enforce some rules: fish can't leave the surface
-        if (transform.position.y > worldInfo.floorDepth - 1.0f)
+        if (transform.position.y > worldInfo.floorDepth - 0.5f)
         {
             Vector3 correctedPosition = transform.position;
-            correctedPosition.y = worldInfo.floorDepth;
+            correctedPosition.y = worldInfo.floorDepth - 0.5f;
             transform.position = correctedPosition;
         }
     }

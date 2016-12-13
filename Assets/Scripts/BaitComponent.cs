@@ -4,7 +4,7 @@ using System.Collections;
 public class BaitComponent : MonoBehaviour {
     public bool attracting;
 
-    public float hookDistance = 0.5f; // distance at which an attracted fish is "hooked"
+    public float hookDistance = 0.7f; // distance at which an attracted fish is "hooked"
     public float distOfDetection = 10.0f;
     public TapToPlaceParent tapToPlaceParent;
     public float pickupDistance = 1.0f;
