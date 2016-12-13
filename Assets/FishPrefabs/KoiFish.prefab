@@ -955,7 +955,7 @@ MonoBehaviour:
   worldInfo: {fileID: 0}
   bait: {fileID: 0}
   speed: 0.5
-  turnSpeed: 0.3
+  turnSpeed: 60
   maxWaypointTime: 5
   minWaypointTime: 1
   hookTime: 10

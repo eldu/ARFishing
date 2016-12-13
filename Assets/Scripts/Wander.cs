@@ -8,7 +8,7 @@ public class Wander : MonoBehaviour {
     public BaitComponent bait;
 
     public float speed = 0.5f;
-    public float turnSpeed = 0.3f; // turnSpeed in max degrees that can be rotated in one second
+    public float turnSpeed = 60.0f; // turnSpeed in max degrees that can be rotated in one second
     public float maxWaypointTime = 5.0f;
     public float minWaypointTime = 1.0f;
     public float hookTime = 10.0f;

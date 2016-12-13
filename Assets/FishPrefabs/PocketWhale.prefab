@@ -898,9 +898,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5492f46c1db5c4291e1502fd6f422f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bait: {fileID: 1000011385913434, guid: ade6a0932cf1c26418ff90e73da78940, type: 2}
+  worldInfo: {fileID: 0}
+  bait: {fileID: 0}
   speed: 0.5
+  turnSpeed: 60
+  maxWaypointTime: 5
+  minWaypointTime: 1
+  hookTime: 10
   range: {x: 10, y: 2, z: 10}
+  wayPoint: {x: 0, y: 0, z: 0}
 --- !u!136 &136000012485022666
 CapsuleCollider:
   m_ObjectHideFlags: 1
