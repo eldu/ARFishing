@@ -52,6 +52,11 @@ public class Wander : MonoBehaviour {
                 curHookTime = hookTime;
                 print("hooked!");
                 fishHookedNotif.SetActive(true);
+
+                // signal the phone to vibrate
+                byte evCode = 4;
+                bool reliable = true;
+                PhotonNetwork.RaiseEvent(evCode, null, reliable, null);
             }
         }
 
@@ -69,6 +74,11 @@ public class Wander : MonoBehaviour {
                 bait.reset();
                 hooked = false;
                 print("fish got away!");
+
+                // signal the phone to vibrate
+                byte evCode = 4;
+                bool reliable = true;
+                PhotonNetwork.RaiseEvent(evCode, null, reliable, null);
 
                 fishHookedNotif.SetActive(false);
                 fishEscapedNotif.SetActive(true);
