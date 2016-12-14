@@ -4,13 +4,14 @@
 
 Shader "Surface Reconstruction/Wireframe"
 {
-    Properties
-    {
-        _BaseColor("Base color", Color) = (0.0, 0.0, 0.0, 1.0)
-        _WireColor("Wire color", Color) = (1.0, 1.0, 1.0, 1.0)
-        _WireThickness("Wire thickness", Range(0, 800)) = 100
+	Properties
+	{
+		_BaseColor("Base color", Color) = (0.0, 0.0, 0.0, 1.0)
+		_WireColor("Wire color", Color) = (1.0, 1.0, 1.0, 1.0)
+		_WireThickness("Wire thickness", Range(0, 800)) = 100
 		_DropDepth("Drop depth", Range(-100.0, 100.0)) = 0.0
 		_Invisible("Invisibility", Int) = 1
+		_Debug("Debug", Int) = 0
     }
     SubShader
     {
@@ -31,6 +32,7 @@ Shader "Surface Reconstruction/Wireframe"
             float _WireThickness;
 			float _DropDepth;
 			int _Invisible;
+			int _Debug;
 
             // Based on approach described in "Shader-Based Wireframe Drawing", http://cgg-journal.com/2008-2/06/index.html
 
@@ -118,7 +120,7 @@ Shader "Surface Reconstruction/Wireframe"
                 // Fade out the alpha but not the color so we don't get any weird halo effects from
                 // a fade to a different color.
 				float4 color = float4(0.0, 0.0, 0.0, 0.0);
-				if (_Invisible) return color;
+				if (_Invisible && !_Debug) return color;
 				color = I * _WireColor + (1 - I) * _BaseColor;
 				color.a = I;
                 return color;

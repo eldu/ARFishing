@@ -10,6 +10,9 @@ public class VoiceCommands : MonoBehaviour {
 
     public AudioSource BGMaudio;
 
+    public Material scanMeshMaterial;
+    int debugShader = 0;
+
     // Use this for initialization
     void Start () {
 	
@@ -43,5 +46,11 @@ public class VoiceCommands : MonoBehaviour {
     {
         if (BGMaudio.mute)
             BGMaudio.mute = false;
+    }
+
+    public void DebugShader()
+    {
+        debugShader = debugShader == 1 ? 0 : 1;
+        scanMeshMaterial.SetInt("_Debug", debugShader);
     }
 }

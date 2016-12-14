@@ -703,6 +703,23 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
+  - Keyword: Debug Shader
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 884080910}
+          m_MethodName: DebugShader
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
 --- !u!4 &884080909
 Transform:
   m_ObjectHideFlags: 0
@@ -729,6 +746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuPrefab: {fileID: 1666984252}
   BGMaudio: {fileID: 416279446}
+  scanMeshMaterial: {fileID: 2100000, guid: 4b0f3315a044218428165ca0893aa0b5, type: 2}
 --- !u!114 &884080911
 MonoBehaviour:
   m_ObjectHideFlags: 0
