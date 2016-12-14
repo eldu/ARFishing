@@ -4,8 +4,8 @@ using System.Diagnostics;
 
 public class VoiceCommands : MonoBehaviour {
 
-    [Tooltip("Drag the Menu prefab asset.")]
-    public GameObject MenuPrefab;
+    public GameObject fishCatalogue;
+    public GameObject instructions;
 
     public AudioSource BGMaudio;
 
@@ -26,13 +26,13 @@ public class VoiceCommands : MonoBehaviour {
     {
         Vector3 offset = new Vector3();
         offset.z = 0.5f;
-        MenuPrefab.SetActive(true);
+        fishCatalogue.SetActive(true);
         //UnityEngine.Debug.Log("Menu???");
     }
 
     public void HideMenu()
     {
-        MenuPrefab.SetActive(false);
+        fishCatalogue.SetActive(false);
     }
 
     public void StopMusic()
@@ -51,5 +51,15 @@ public class VoiceCommands : MonoBehaviour {
     {
         debugShader = debugShader == 1 ? 0 : 1;
         scanMeshMaterial.SetInt("_Debug", debugShader);
+    }
+
+    public void ShowInstructions()
+    {
+        instructions.SetActive(true);
+    }
+
+    public void HideInstructions()
+    {
+        instructions.SetActive(false);
     }
 }
