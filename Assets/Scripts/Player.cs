@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Player : MonoBehaviour {
@@ -13,6 +14,10 @@ public class Player : MonoBehaviour {
     public bool showHeldLure = false;
 
     Vector3 launchDir;
+
+    public GameObject fishCaughtNotif;
+    public Text fishCaughtName;
+    public GameObject fishHookedNotif;
 
 	// Use this for initialization
 	void Start () {
@@ -74,14 +79,19 @@ public class Player : MonoBehaviour {
         {
             network.SignalCastingReadiness(nowReadyToCast);
             
-            // TODO: update got fish!
-            if (nowReadyToCast == true && baitComponent.hooked != null)
-            {
-                print("got " + baitComponent.hooked.GetComponent<FishInfo>().fishName);
-                Destroy(baitComponent.hooked);
-                baitComponent.hooked = null;
-            }
         }
+
+        // TODO: update got fish!
+        if (nowReadyToCast == true && baitComponent.hooked != null)
+        {
+            print("got " + baitComponent.hooked.GetComponent<FishInfo>().fishName);
+            fishCaughtName.text = baitComponent.hooked.GetComponent<FishInfo>().fishName;
+            fishCaughtNotif.SetActive(true);
+            fishHookedNotif.SetActive(false);
+            Destroy(baitComponent.hooked);
+            baitComponent.hooked = null;
+        }
+
         readyToCast = nowReadyToCast;
     }
 
