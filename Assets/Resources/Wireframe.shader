@@ -37,6 +37,7 @@ Shader "Surface Reconstruction/Wireframe"
             struct v2g
             {
                 float4 viewPos : SV_POSITION;
+				float tooDeep : COLOR;
             };
 
             v2g vert(appdata_base v)
@@ -46,7 +47,8 @@ Shader "Surface Reconstruction/Wireframe"
 					o.viewPos = mul(UNITY_MATRIX_MVP, v.vertex);
 				else {
 					float4 worldVertex = mul(UNITY_MATRIX_M, v.vertex);
-					worldVertex.y = (worldVertex.y < _DropDepth + 0.5) ? worldVertex.y - 1.0 : worldVertex.y;
+					o.tooDeep = (worldVertex.y < _DropDepth) ? 1.0 : 0.0; // mark vertices that shouldn't be drawn for occlusion
+					worldVertex.y = max(worldVertex.y, _DropDepth); // flatten triangles into the plane of the game
 					o.viewPos = mul(UNITY_MATRIX_VP, worldVertex);
 				}
                 return o;
@@ -81,6 +83,11 @@ Shader "Surface Reconstruction/Wireframe"
                 // by the other two vertices.
 
                 g2f o;
+
+				if (_Invisible &&
+					i[0].tooDeep > 0.0 &&
+					i[1].tooDeep > 0.0 &&
+					i[2].tooDeep > 0.0) return;
 
                 o.viewPos = i[0].viewPos;
                 o.inverseW = 1.0 / o.viewPos.w;
