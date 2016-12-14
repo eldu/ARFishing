@@ -6,6 +6,8 @@ public class TapToPlaceParent : MonoBehaviour
     public int swimmerSpawnInterval;
     public Material scanMeshMaterial;
     public BaitComponent bait;
+    public GameObject fishHookedNotif;
+    public GameObject fishEscapedNotif;
 
     // private List<GameObject> fishies;
     private int numFish;
@@ -113,6 +115,8 @@ public class TapToPlaceParent : MonoBehaviour
         Wander wanderComponent = swimmerClone.GetComponent<Wander>();
         wanderComponent.worldInfo = this;
         wanderComponent.bait = bait;
+        wanderComponent.fishEscapedNotif = fishEscapedNotif;
+        wanderComponent.fishHookedNotif = fishHookedNotif;
 
         numFish++;
     }

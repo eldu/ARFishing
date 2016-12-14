@@ -6,7 +6,6 @@ public class VoiceCommands : MonoBehaviour {
 
     [Tooltip("Drag the Menu prefab asset.")]
     public GameObject MenuPrefab;
-    private GameObject menuGameObject;
 
     public AudioSource BGMaudio;
 

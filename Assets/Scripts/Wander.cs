@@ -6,6 +6,8 @@ public class Wander : MonoBehaviour {
     // Components
     public TapToPlaceParent worldInfo;
     public BaitComponent bait;
+    public GameObject fishHookedNotif;
+    public GameObject fishEscapedNotif;
 
     public float speed = 0.5f;
     public float turnSpeed = 60.0f; // turnSpeed in max degrees that can be rotated in one second
@@ -49,6 +51,7 @@ public class Wander : MonoBehaviour {
                 hooked = true;
                 curHookTime = hookTime;
                 print("hooked!");
+                fishHookedNotif.SetActive(true);
             }
         }
 
@@ -66,6 +69,9 @@ public class Wander : MonoBehaviour {
                 bait.reset();
                 hooked = false;
                 print("fish got away!");
+
+                fishHookedNotif.SetActive(false);
+                fishEscapedNotif.SetActive(true);
             }
 
             if (bait.isEssentiallyStill())
