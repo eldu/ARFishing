@@ -51,7 +51,7 @@ public class TapToPlaceParent : MonoBehaviour
         {
             SpatialMapping.Instance.DrawVisualMeshes = true; // keep drawing the visual mesh for occlusion,
             scanMeshMaterial.SetInt("_Invisible", 1);        // but perform a vertex transformation and don't draw "lines"
-            scanMeshMaterial.SetFloat("_DropDepth", floorDepth + 0.025f);
+            scanMeshMaterial.SetFloat("_DropDepth", floorDepth + 0.05f);
         }
     }
 
