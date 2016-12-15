@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 769c95d7d86270e4fafb1ad8e0b9f6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swimmerSpawnInterval: 180
+  swimmerSpawnInterval: 150
   scanMeshMaterial: {fileID: 2100000, guid: 4b0f3315a044218428165ca0893aa0b5, type: 2}
   bait: {fileID: 651636725}
   fishHookedNotif: {fileID: 1085111920}

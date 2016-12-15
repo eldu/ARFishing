@@ -1,96 +1,27 @@
 fileFormatVersion: 2
-guid: d70ad914bdf7c8347a2240e6f4438d52
-timeCreated: 1481501169
+guid: c6d1eb246a2c13748a56f3fe5202b78a
+timeCreated: 1481775782
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: object
-    100004: object10
-    100006: object11
-    100008: object12
-    100010: object2
-    100012: object3
-    100014: object4
-    100016: object5
-    100018: object6
-    100020: object7
-    100022: object8
-    100024: object9
-    100026: joint1
-    100028: joint2
-    100030: joint3
-    100032: joint4
-    100034: joint5
-    100036: joint6
-    100038: joint7
-    100040: joint8
-    100042: object13
+    100002: joint1
+    100004: joint2
+    100006: joint3
+    100008: joint4
+    100010: MagikarpF
     400000: //RootNode
-    400002: object
-    400004: object10
-    400006: object11
-    400008: object12
-    400010: object2
-    400012: object3
-    400014: object4
-    400016: object5
-    400018: object6
-    400020: object7
-    400022: object8
-    400024: object9
-    400026: joint1
-    400028: joint2
-    400030: joint3
-    400032: joint4
-    400034: joint5
-    400036: joint6
-    400038: joint7
-    400040: joint8
-    400042: object13
-    2300000: object
-    2300002: object10
-    2300004: object11
-    2300006: object12
-    2300008: object2
-    2300010: object3
-    2300012: object4
-    2300014: object5
-    2300016: object6
-    2300018: object7
-    2300020: object8
-    2300022: object9
-    2300024: object13
-    3300000: object
-    3300002: object10
-    3300004: object11
-    3300006: object12
-    3300008: object2
-    3300010: object3
-    3300012: object4
-    3300014: object5
-    3300016: object6
-    3300018: object7
-    3300020: object8
-    3300022: object9
-    3300024: object13
-    4300000: object
-    4300002: object8
-    4300004: object7
-    4300006: object5
-    4300008: object6
-    4300010: object2
-    4300012: object11
-    4300014: object12
-    4300016: object3
-    4300018: object4
-    4300020: object10
-    4300022: object9
-    4300024: object13
+    400002: joint1
+    400004: joint2
+    400006: joint3
+    400008: joint4
+    400010: MagikarpF
+    4300000: MagikarpF
     7400000: Take 001
+    9500000: //RootNode
     11100000: //RootNode
-    13700000: object13
+    13700000: MagikarpF
   materials:
     importMaterials: 1
     materialName: 0
@@ -116,7 +47,7 @@ ModelImporter:
       name: Take 001
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 30
+      lastFrame: 24
       wrapMode: 2
       orientationOffsetY: 0
       level: 0
@@ -145,17 +76,9 @@ ModelImporter:
         weight: 1
       - path: joint1/joint3
         weight: 1
-      - path: joint1/joint3/joint4
+      - path: joint1/joint4
         weight: 1
-      - path: joint1/joint3/joint4/joint6
-        weight: 1
-      - path: joint1/joint3/joint4/joint8
-        weight: 1
-      - path: joint1/joint3/joint5
-        weight: 1
-      - path: joint1/joint3/joint7
-        weight: 1
-      - path: object13
+      - path: MagikarpF
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
