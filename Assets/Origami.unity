@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4505589, g: 0.50063235, b: 0.5758059, a: 1}
+  m_IndirectSpecularColor: {r: 0.4505586, g: 0.5006319, b: 0.5758055, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39375c6b1d771194dbc385528628aa4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numSecs: 15
 --- !u!114 &122901553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +389,7 @@ Transform:
   m_Children:
   - {fileID: 1639873145}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &416279444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,7 +1186,7 @@ Prefab:
     - target: {fileID: 224000013544191344, guid: 5907103257986664c9bb812b61cd866d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224000013544191344, guid: 5907103257986664c9bb812b61cd866d,
         type: 2}
@@ -1702,7 +1701,7 @@ RectTransform:
   - {fileID: 1227691471}
   - {fileID: 1707059214}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2269,7 +2268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39375c6b1d771194dbc385528628aa4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numSecs: 15
 --- !u!114 &1961238953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2523,7 +2521,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 470424, guid: c8685776cafe5d24493303e077fffcfb, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8685776cafe5d24493303e077fffcfb, type: 2}
