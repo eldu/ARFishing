@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     public BaitComponent baitComponent;
     public TrailRenderer baitComponentTrail;
     public FishCatalogue fishCatalogue;
+    public Text fishCountText;
 
     public Hololens_Network network;
 
@@ -82,27 +83,23 @@ public class Player : MonoBehaviour {
             
         }
 
-        // TODO: update got fish!
         if (nowReadyToCast == true && baitComponent.hooked != null)
         {
             GameObject caughtFish = baitComponent.hooked;
             print("got " + caughtFish.GetComponent<FishInfo>().fishName);
-            fishCaughtName.text = caughtFish.GetComponent<FishInfo>().fishName;
+            fishCaughtName.text = caughtFish.GetComponent<FishInfo>().fishName +"!";
             fishCaughtNotif.SetActive(true);
             fishHookedNotif.SetActive(false);
 
-            Text fishCountText = GameObject.Find("fishesCaughtCount").GetComponent<Text>();
             fishCatalogue.fishesCaughtCount++;
             fishCountText.text = fishCatalogue.fishesCaughtCount.ToString();
-            
-            foreach (string fishType in fishCatalogue.typesOfFishCaught) {
-                print(fishType);
-            }
 
             // if this type of fish has not been seen before, add it to the catalogue
+            print(caughtFish.GetComponent<FishInfo>().fishName);
+            print(fishCatalogue.ToString());
+            print(fishCatalogue.typesOfFishCaught.ToString());
             if (!fishCatalogue.typesOfFishCaught.Contains(caughtFish.GetComponent<FishInfo>().fishName))
             {
-                fishCatalogue.typesOfFishCaught.Add(caughtFish.GetComponent<FishInfo>().fishName);
                 fishCatalogue.AddFishToCatalogue(caughtFish.GetComponent<FishInfo>());
             }
 

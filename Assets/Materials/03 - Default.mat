@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Wireframe
-  m_Shader: {fileID: 4800000, guid: df227317c7c65cd46b274e87f1775798, type: 3}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
+  m_Name: 03 - Default
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -77,14 +77,8 @@ Material:
         name: _Cutoff
       second: 0.5
     - first:
-        name: _Debug
-      second: 0
-    - first:
         name: _DetailNormalMapScale
       second: 1
-    - first:
-        name: _DropDepth
-      second: -0.64000005
     - first:
         name: _DstBlend
       second: 0
@@ -97,9 +91,6 @@ Material:
     - first:
         name: _GlossyReflections
       second: 1
-    - first:
-        name: _Invisible
-      second: 0
     - first:
         name: _Metallic
       second: 0
@@ -125,21 +116,12 @@ Material:
         name: _UVSec
       second: 0
     - first:
-        name: _WireThickness
-      second: 100
-    - first:
         name: _ZWrite
       second: 1
     m_Colors:
     - first:
-        name: _BaseColor
-      second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _WireColor
-      second: {r: 1, g: 1, b: 1, a: 1}

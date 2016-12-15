@@ -8,7 +8,7 @@ public class FishInfo : MonoBehaviour {
     public string fishWeight;
     public float fishRarity;
 
-    public Image fishPhoto;
+    public Texture fishPhoto;
 
 	// Use this for initialization
 	void Start () {

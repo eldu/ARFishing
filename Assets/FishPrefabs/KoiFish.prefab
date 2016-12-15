@@ -954,6 +954,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldInfo: {fileID: 0}
   bait: {fileID: 0}
+  fishHookedNotif: {fileID: 0}
+  fishEscapedNotif: {fileID: 0}
   speed: 0.5
   turnSpeed: 60
   maxWaypointTime: 5
@@ -977,7 +979,7 @@ MonoBehaviour:
     scales.
   fishWeight: 2.5 lbs
   fishRarity: 0.5
-  fishPhoto: {fileID: 0}
+  fishPhoto: {fileID: 2800000, guid: 3e1a474be03e8974196ebbee798c9f04, type: 3}
 --- !u!136 &136000010241602206
 CapsuleCollider:
   m_ObjectHideFlags: 1

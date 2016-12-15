@@ -886,7 +886,7 @@ MonoBehaviour:
   fishDescription: A tiny whale, just like you've always wanted.
   fishWeight: 100 lbs
   fishRarity: 0.1
-  fishPhoto: {fileID: 0}
+  fishPhoto: {fileID: 2800000, guid: 5cdd5048f9737a2498418731bc8a5764, type: 3}
 --- !u!114 &114000012683934624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -900,6 +900,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldInfo: {fileID: 0}
   bait: {fileID: 0}
+  fishHookedNotif: {fileID: 0}
+  fishEscapedNotif: {fileID: 0}
   speed: 0.5
   turnSpeed: 60
   maxWaypointTime: 5

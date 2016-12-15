@@ -30,6 +30,8 @@ public class BaitComponent : MonoBehaviour {
 	void Update () {
         attracting = (tapToPlaceParent.floorDepth > this.transform.position.y);
 
+        transform.LookAt(player.transform.position);
+
         if (attracting && flying)
         {
             flying = false;

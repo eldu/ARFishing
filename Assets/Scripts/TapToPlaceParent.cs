@@ -11,9 +11,9 @@ public class TapToPlaceParent : MonoBehaviour
 
     // private List<GameObject> fishies;
     private int numFish;
-    public int maxNumFish = 15;
+    public int maxNumFish;
 
-    int swimmerSpawnTimer;
+    int swimmerSpawnTimer = 0;
     bool readyToSpawnFish = false;
 
     bool placing = true;
@@ -109,9 +109,10 @@ public class TapToPlaceParent : MonoBehaviour
     {
         chooseFishToSpawn();
         Vector3 offset = new Vector3();
-        offset.y = -0.5f;
+        offset.y = Random.Range(-0.2f, -1.5f);
         Transform swimmerClone = Instantiate(swimmerPrefab);
         swimmerClone.transform.position = offset + transform.position;
+
         Wander wanderComponent = swimmerClone.GetComponent<Wander>();
         wanderComponent.worldInfo = this;
         wanderComponent.bait = bait;

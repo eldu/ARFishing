@@ -198,7 +198,7 @@ MonoBehaviour:
     the horribly weak descendants that exist today.
   fishWeight: 22 lbs
   fishRarity: 0.1
-  fishPhoto: {fileID: 0}
+  fishPhoto: {fileID: 2800000, guid: f987c0411f14ed0418beaf9ea4f2aad0, type: 3}
 --- !u!114 &114000013902749944
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -41,7 +41,7 @@ public class Wander : MonoBehaviour {
         float currSpeed = speed;
 
         // check if this is hooked
-        if (beingAttracted)
+        if (beingAttracted && !hooked)
         {
             Vector3 dirToBait = bait.transform.position - transform.position;
             dirToBait.y = 0.0f;

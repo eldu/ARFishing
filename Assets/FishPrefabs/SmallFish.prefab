@@ -218,7 +218,7 @@ MonoBehaviour:
   fishDescription: A small fish.
   fishWeight: 0.01 lbs
   fishRarity: 0.25
-  fishPhoto: {fileID: 0}
+  fishPhoto: {fileID: 2800000, guid: 76f61c8861d155842b690e70ee4c72e4, type: 3}
 --- !u!136 &136000010459892234
 CapsuleCollider:
   m_ObjectHideFlags: 1
