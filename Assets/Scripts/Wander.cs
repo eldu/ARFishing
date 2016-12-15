@@ -171,7 +171,7 @@ public class Wander : MonoBehaviour {
 
     void OnSelect()
     {
-        fishCatalogue = GameObject.Find("FishCatalogue").GetComponent<FishCatalogue>();
+        /*fishCatalogue = GameObject.Find("FishCatalogue").GetComponent<FishCatalogue>();
         fishCountText = GameObject.Find("fishesCaughtCount").GetComponent<Text>();
         fishCatalogue.fishesCaughtCount++;
         fishCountText.text = fishCatalogue.fishesCaughtCount.ToString();
@@ -184,6 +184,6 @@ public class Wander : MonoBehaviour {
 
         //Debug.Log(fishCatalogue.name);
        // Debug.Log(fishCountText.text);
-        Destroy(gameObject);
+        Destroy(gameObject);*/
     }
 }

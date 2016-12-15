@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DismissAfterNSeconds : MonoBehaviour {
 
-    public float numSecs;
+    private float numSecs;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +21,7 @@ public class DismissAfterNSeconds : MonoBehaviour {
         }
         if (numSecs <= 0)
         {
+            numSecs = 5.0f;
             gameObject.SetActive(false);
         }
     }
